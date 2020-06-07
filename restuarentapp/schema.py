@@ -7,7 +7,7 @@ import graphene
 class Restuarents(DjangoObjectType):
     class Meta:
         model = Restuarent
-        filter_fields = ['votes']
+        filter_fields = ['name','cuisines','votes','cost']
         interfaces = (relay.Node, )
 class Query(graphene.ObjectType):
     restinfo = relay.Node.Field(Restuarents)
@@ -15,7 +15,6 @@ class Query(graphene.ObjectType):
 
 
     def resolve_prodinfo(self,info):
-        print(Restuarent.Objects.all())
         return Restuarent.objects.all()
 
 schema = graphene.Schema(query=Query)

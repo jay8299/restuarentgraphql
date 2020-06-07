@@ -23,9 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '85fl*l@#0lri!-pbwaa7du(g&qnxtv$ynua6gwmy$+btu(5e^y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -44,6 +48,7 @@ INSTALLED_APPS = [
     #'django_mongoengine.mongo_auth',
     #'django_mongoengine.mongo_admin',
     'corsheaders',
+    'django_extensions',
 ]
 GRAPHENE = {
     'SCHEMA': 'restuarentapp.schema.schema'

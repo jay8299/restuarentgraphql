@@ -1,9 +1,8 @@
 import sqlite3
 import pandas as pd
 
-conn = sqlite3.connect('/Users/vijaykumar/Desktop/graphql_django/graphapp/db.sqlite3')
-df2 = pd.read_csv('/Users/vijaykumar/Desktop/graphql_django/restaurant_addc9a1430.csv')
-df = pd.read_csv('/Users/vijaykumar/Desktop/graphql_django/restaurantsa9126b3.csv')
+conn = sqlite3.connect('../db.sqlite3')
+df = pd.read_csv('../restaurantsa9126b3.csv')
 
 df=df[['id', 'name', 'Cuisines', 'Cost',
        'Currency', 'booking', 'delivery',
